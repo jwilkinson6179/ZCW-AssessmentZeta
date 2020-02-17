@@ -45,4 +45,42 @@ public class IntegerUtilsTest {
         // : Then
         Assert.assertEquals(expected, actual);
     }
+
+    /* Wilkinson: Tests for my own helper function -- edited out in case grading issues
+
+    @Test
+    public void pushOnArrayTest()
+    {
+        // GIVEN
+        Integer[] expected = { 10, 5, 3, 9 };
+        Integer[] startingArray = { 10, 5, 3 };
+        Integer addedValue = 9;
+
+        // WHEN
+
+        Integer[] actual = IntegerUtils.pushIntegerOnArray(addedValue, startingArray);
+
+        // THEN
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void pushOnArrayTestTwo()
+    {
+        // GIVEN
+        Integer[] expected = { 0, 9, -7 };
+        Integer[] startingArray = { 0, 9 };
+        Integer addedValue = -7;
+
+        // WHEN
+
+        Integer[] actual = IntegerUtils.pushIntegerOnArray(addedValue, startingArray);
+
+        // THEN
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    */
 }
