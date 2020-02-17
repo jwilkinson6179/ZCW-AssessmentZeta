@@ -1,5 +1,9 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import com.sun.tools.internal.xjc.api.ClassNameAllocator;
+
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -32,23 +36,25 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove)
     {
-        Object[] resultArray = new Object[1];
+        /*
+        ArrayList<?> resultArray = new ArrayList<>();
 
-        for(Integer i = 0; i < objectArray.length; i++)
+        for(Object element : objectArray)
         {
-            if(objectArray[i].equals(objectToRemove))
+            if(!element.equals(objectToRemove))
             {
-                System.out.println("Skipping val " + objectArray[i].toString());
-            }
-            else
-            {
-                pushOnArray(objectToRemove, resultArray);
-                System.out.println("Adding to array val " + objectArray[i].toString());
+                resultArray.add(element);
             }
         }
-
         // TODO: Return to this
+
+        System.out.println(objectArray.getClass());
+        System.out.println(resultArray.getClass());
         return resultArray;
+
+         */
+
+        return null;
     }
 
     /**
