@@ -38,7 +38,10 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        String result = reverse(str);
+        result = camelCase(result);
+
+        return result;
     }
 
 
@@ -46,8 +49,15 @@ public class BasicStringUtils {
      * @param str a string input from user
      * @return string with identical contents excluding first and last character
      */
-    public static String removeFirstAndLastCharacter(String str) {
-        return null;
+    public static String removeFirstAndLastCharacter(String str)
+    {
+        if(str.length() > 3) {
+            return str.substring(1, str.length() - 1);
+        }
+        else
+        {
+            return "";
+        }
     }
 
     /**
