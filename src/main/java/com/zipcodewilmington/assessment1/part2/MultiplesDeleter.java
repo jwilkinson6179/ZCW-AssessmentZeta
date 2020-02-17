@@ -9,8 +9,9 @@ public class MultiplesDeleter {
      * @return all ints which are not divisible by 2
      * given an array of integers, named `ints` return an identical array with evens removed
      */
-    public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+    public Integer[] deleteEvens(Integer[] ints)
+    {
+        return deleteMultiplesOfN(ints, 2);
     }
 
     /**
@@ -19,7 +20,26 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        Integer[] result = new Integer[1];
+        Integer lastIdx = 0;
+
+        for(Integer number : ints )
+        {
+            if(number % 2 == 0)
+            {
+                Integer[] buffer = new Integer[lastIdx + 1];
+                for(Integer k = 0; k < result.length; k++)
+                {
+                    buffer[k] = result[k];
+                }
+
+                buffer[lastIdx] = number;
+                result = buffer;
+                lastIdx++;
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -28,7 +48,7 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+        return deleteMultiplesOfN(ints, 3);
     }
 
     /**
@@ -38,6 +58,25 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        Integer[] result = new Integer[1];
+        Integer lastIdx = 0;
+
+        for(Integer number : ints )
+        {
+            if(number % multiple != 0)
+            {
+                Integer[] buffer = new Integer[lastIdx + 1];
+                for(Integer k = 0; k < result.length; k++)
+                {
+                    buffer[k] = result[k];
+                }
+
+                buffer[lastIdx] = number;
+                result = buffer;
+                lastIdx++;
+            }
+        }
+
+        return result;
     }
 }

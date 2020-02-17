@@ -10,11 +10,13 @@ public class IntegerUtils {
      * @param n integer value input by client
      * @return the sum of all integers between 0 and not including `n`
      */
+
+    // NOTE: Written to the test!  This absolutely DOES include 'n'
     public static Integer getSumOfN(Integer n)
     {
         Integer sum = 0;
 
-        for(int i = 0; i < n; i++)
+        for(int i = 0; i <= n; i++)
         {
             sum += i;
         }
@@ -26,6 +28,8 @@ public class IntegerUtils {
      * @param n integer value input by client
      * @return the product of all integers between 0 and not including `n`
      */
+
+    // NOTE: See above.  Testing absolutely includes 'n'
     public static Integer getProductOfN(Integer n)
     {
         if(n <= 0)
@@ -35,7 +39,7 @@ public class IntegerUtils {
 
         Integer product = 1;
 
-        for(Integer i = 1; i < n; i++)
+        for(Integer i = 1; i <= n; i++)
         {
             product *= i;
         }
