@@ -47,8 +47,9 @@ public class ArrayUtils {
             }
         }
 
-//        T[] result = ArrayList.toArray(T[])
-//        return result;
+//        T[] result = new T[list.size()];
+//        result = list.toArray(result);
+
         return null;
     }
 
