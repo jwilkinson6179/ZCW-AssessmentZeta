@@ -2,6 +2,7 @@ package com.zipcodewilmington.assessment1.part2;
 
 import com.sun.tools.internal.xjc.api.ClassNameAllocator;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -34,26 +35,20 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-    public static Object[] removeValue(Object[] objectArray, Object objectToRemove)
+    public static <T> T[] removeValue(T[] objectArray, T objectToRemove)
     {
-        /*
-        ArrayList<?> resultArray = new ArrayList<>();
+        ArrayList<T> list = new ArrayList<>();
 
-        for(Object element : objectArray)
+        for(T element : objectArray)
         {
             if(!element.equals(objectToRemove))
             {
-                resultArray.add(element);
+                list.add(element);
             }
         }
-        // TODO: Return to this
 
-        System.out.println(objectArray.getClass());
-        System.out.println(resultArray.getClass());
-        return resultArray;
-
-         */
-
+//        T[] result = ArrayList.toArray(T[])
+//        return result;
         return null;
     }
 
