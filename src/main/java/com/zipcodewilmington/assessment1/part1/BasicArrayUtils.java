@@ -2,6 +2,8 @@ package com.zipcodewilmington.assessment1.part1;
 
 /**
  * Created by leon on 2/16/18.
+ *
+ * Submission for James Wilkinson, Cohort 6.0, 2020 / 17 / 2
  */
 public class BasicArrayUtils {
     /**
