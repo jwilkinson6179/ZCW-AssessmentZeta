@@ -32,21 +32,23 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove)
     {
-/*
         Object[] resultArray = new Object[1];
 
         for(Integer i = 0; i < objectArray.length; i++)
         {
-            if(!objectArray[i].equals(objectToRemove))
+            if(objectArray[i].equals(objectToRemove))
+            {
+                System.out.println("Skipping val " + objectArray[i].toString());
+            }
+            else
             {
                 pushOnArray(objectToRemove, resultArray);
+                System.out.println("Adding to array val " + objectArray[i].toString());
             }
         }
 
-
- */
         // TODO: Return to this
-        return objectArray;
+        return resultArray;
     }
 
     /**
@@ -99,8 +101,8 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        /*
+    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd)
+    {
         Object[] mergedArrays = new Object[objectArray.length + objectArrayToAdd.length];
 
         for(Integer i = 0; i < objectArray.length; i++)
@@ -114,10 +116,6 @@ public class ArrayUtils {
         }
 
         return mergedArrays;
-        */
-
-        // TODO: Figure out autoboxing?
-        return objectArray;
     }
 
     public static Object[] pushOnArray(Object newObject, Object[] array)
