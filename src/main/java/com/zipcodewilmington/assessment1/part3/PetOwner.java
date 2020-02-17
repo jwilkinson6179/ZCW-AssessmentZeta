@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class PetOwner {
     String name;
-    ArrayList<Pet> list = new ArrayList<>();
+    ArrayList<Pet> list = new ArrayList<Pet>();
 
     /**
      * @param name name of the owner of the Pet
@@ -15,9 +15,13 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.name = name;
-        for(Pet animal : pets)
+
+        if(pets != null)
         {
-            list.add(animal);
+            for (Pet animal : pets) {
+                animal.setOwner(this);
+                list.add(animal);
+            }
         }
     }
 
@@ -84,22 +88,31 @@ public class PetOwner {
     /**
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
-    public Float getAveragePetAge() {
-        return null;
+    public Float getAveragePetAge()
+    {
+        Integer sum = 0;
+
+        for(Pet animal : list)
+        {
+            sum += animal.getAge();
+        }
+
+        Float average = Float.valueOf(sum) / Float.valueOf(list.size());
+        return average;
     }
 
     /**
      * @return the number of Pet objects stored in this class
      */
     public Integer getNumberOfPets() {
-        return null;
+        return list.size();
     }
 
     /**
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return this.name;
     }
 
     /**
@@ -107,6 +120,17 @@ public class PetOwner {
      */
     public Pet[] getPets()
     {
-        return null;
+        if(list.size() == 0)
+        {
+            Pet[] emptyList = new Pet[1];
+            emptyList[0] = null;
+
+            return emptyList;
+        }
+
+        Pet pets[] = new Pet[list.size()];
+        pets = list.toArray(pets);
+
+        return pets;
     }
 }

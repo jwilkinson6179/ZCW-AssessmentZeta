@@ -5,7 +5,17 @@ public class Jumper {
     /*
      * Complete the function below.
      */
-    public int jumps(int k, int j) {
-        return -1;
+    public int jumps(int flagHeight, int jumpHeight)
+    {
+        if(jumpHeight <= 1)
+        {
+            return flagHeight;
+        }
+        else {
+            Integer bigJumps = flagHeight / jumpHeight;
+            Integer littleJumps = flagHeight - (bigJumps * jumpHeight);
+
+            return bigJumps + littleJumps;
+        }
     }
 }
