@@ -1,10 +1,5 @@
 package com.zipcodewilmington.assessment1.part2;
 
-import com.sun.tools.internal.xjc.api.ClassNameAllocator;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 /**
  * Created by leon on 2/16/18.
  */
@@ -35,22 +30,31 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-    public static <T> T[] removeValue(T[] objectArray, T objectToRemove)
+    public static Object[] removeValue(Object[] objectArray, Object objectToRemove)
     {
-        ArrayList<T> list = new ArrayList<>();
+        Integer[] resultArray;
+        Integer arrayLength = 0;
 
-        for(T element : objectArray)
+        for(Object ele : objectArray)
         {
-            if(!element.equals(objectToRemove))
+            if(!(ele.equals(objectToRemove)))
             {
-                list.add(element);
+                arrayLength++;
             }
         }
 
-//        T[] result = new T[list.size()];
-//        result = list.toArray(result);
+        resultArray = new Integer[arrayLength];
+        Integer currentIdx = 0;
 
-        return null;
+        for(Integer i = 0; i < objectArray.length; i++)
+        {
+            if(!objectArray[i].equals(objectToRemove)) {
+                resultArray[currentIdx] = (Integer) objectArray[i];
+                currentIdx++;
+            }
+        }
+
+        return resultArray;
     }
 
     /**
@@ -105,19 +109,18 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd)
     {
-        Object[] mergedArrays = new Object[objectArray.length + objectArrayToAdd.length];
+        Integer[] mergedArray = new Integer[objectArray.length + objectArrayToAdd.length];
 
         for(Integer i = 0; i < objectArray.length; i++)
         {
-            mergedArrays[i] = objectArray[i];
+            mergedArray[i] = (Integer)objectArray[i];
         }
-
         for(Integer i = 0; i < objectArrayToAdd.length; i++)
         {
-            mergedArrays[i + objectArray.length - 1] = objectArrayToAdd[i];
+            mergedArray[objectArray.length + i] = (Integer)objectArrayToAdd[i];
         }
 
-        return mergedArrays;
+        return mergedArray;
     }
 
     public static Object[] pushOnArray(Object newObject, Object[] array)
